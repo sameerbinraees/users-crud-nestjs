@@ -14,6 +14,7 @@ import { ValidateObjectIdMiddleware } from '../middlewares/validate-object-id.mi
   imports: [MongooseModule.forFeature([{ name: 'User', schema: UserSchema }])],
   controllers: [UsersController],
   providers: [UsersService],
+  exports: [UsersService],
 })
 export class UsersModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
