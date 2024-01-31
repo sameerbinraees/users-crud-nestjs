@@ -24,6 +24,6 @@ import { JwtModule } from '@nestjs/jwt';
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(ValidateJWTMiddleware).exclude('auth/*').forRoutes('*');
+    consumer.apply(ValidateJWTMiddleware).exclude('auth/(.*)').forRoutes('*');
   }
 }
